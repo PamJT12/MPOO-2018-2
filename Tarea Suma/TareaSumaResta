@@ -1,0 +1,51 @@
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBOutlet weak var num1TF: UITextField!
+    @IBOutlet weak var num2TF: UITextField!
+    @IBOutlet weak var botonResta: UIButton!
+    @IBOutlet weak var botonSuma: UIButton!
+    @IBOutlet weak var resultadoLabel: UILabel!
+    
+    @IBAction func suma(_ sender: Any) {
+        
+        if let num1 = num1TF.text, let num2 = num2TF.text {
+            if let numero1 = Int(num1), let numero2 = Int(num2){
+                resultadoLabel.text = "\(numero1 + numero2)"
+            }else{
+                resultadoLabel.text = "Un numero por favor"
+            }
+        }else{
+            resultadoLabel.text = "Un numero"
+        }
+        
+    }
+    
+    
+    @IBAction func resta(_ sender: Any) {
+        if let num1 = num1TF.text, let num2 = num2TF.text {
+            if let numero1 = Int(num1), let numero2 = Int(num2){
+                resultadoLabel.text = "\(numero1 - numero2)"
+            }else{
+                resultadoLabel.text = "Un numero por favor"
+            }
+        }else{
+            resultadoLabel.text = "Un numero"
+        }
+        
+    }
+    
+    }
+    
